@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonVoice | Platform Aspirasi Sekolah</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d1a; /* Dark Space */
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Neon Palette */
+        :root {
+            --cyan-neon: #00f2ff;
+            --pink-neon: #ff00e5;
+            --dark-blue: #1a1a2e;
+            --glass-bg: rgba(26, 26, 46, 0.9);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--glass-bg);
+            border-bottom: 2px solid var(--cyan-neon);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--cyan-neon);
+            text-shadow: 0 0 10px var(--cyan-neon);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, #1a1a40 0%, #0d0d1a 70%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .neon-text-pink {
+            color: var(--pink-neon);
+            text-shadow: 0 0 10px var(--pink-neon), 0 0 20px var(--pink-neon);
+        }
+
+        .neon-text-cyan {
+            color: var(--cyan-neon);
+            text-shadow: 0 0 10px var(--cyan-neon), 0 0 20px var(--cyan-neon);
+        }
+
+        /* Form / Card Styles */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 50px 8%;
+        }
+
+        .login-card {
+            background: var(--dark-blue);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .login-card:hover {
+            border-color: var(--cyan-neon);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            text-align: center;
+            color: var(--cyan-neon);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: #0d0d1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--pink-neon);
+            box-shadow: 0 0 5px var(--pink-neon);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: transparent;
+            color: var(--cyan-neon);
+            border: 2px solid var(--cyan-neon);
+            box-shadow: 0 0 10px var(--cyan-neon);
+        }
+
+        .btn-primary:hover {
+            background: var(--cyan-neon);
+            color: #000;
+        }
+
+        /* Public List Section */
+        .aspirasi-feed {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .aspirasi-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--pink-neon);
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            background: var(--pink-neon);
+            color: white;
+            float: right;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #555;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NEON<span>VOICE</span></div>
+        <div>
+            <span style="color: var(--cyan-neon);">●</span> Public Access Mode
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Sampaikan <span class="neon-text-pink">Aspirasi</span></h1>
+        <p>Membangun sekolah yang lebih baik dengan transparansi digital.</p>
+    </header>
+
+    <section class="container">
+        
+        <div class="aspirasi-feed">
+            <h2>Aspirasi Terkini</h2>
+            <div class="aspirasi-item">
+                <span class="status-badge">Selesai</span>
+                <h4>Perbaikan AC Kelas 12 IPA 2</h4>
+                <p style="font-size: 0.9rem; color: #aaa;">"AC bocor sudah diperbaiki oleh teknisi..."</p>
+            </div>
+            <div class="aspirasi-item">
+                <span class="status-badge" style="background: var(--cyan-neon); color: #000;">Proses</span>
+                <h4>Penambahan Buku Literasi</h4>
+                <p style="font-size: 0.9rem; color: #aaa;">"Request buku novel fiksi untuk perpustakaan..."</p>
+            </div>
+        </div>
+
+        <div class="login-card">
+            <h2>Portal Login</h2>
+            <form>
+                <div class="form-group">
+                    <label>Username / NISN</label>
+                    <input type="text" placeholder="Masukkan ID anda...">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <button type="button" class="btn btn-primary">Masuk ke Dashboard</button>
+                <p style="font-size: 0.8rem; margin-top: 15px; text-align: center; color: #777;">
+                    Khusus Siswa & Admin Sekolah
+                </p>
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        &copy; 2026 NeonVoice System | Dibuat dengan semangat Cyberpunk
+    </footer>
+
+</body>
+</html>
